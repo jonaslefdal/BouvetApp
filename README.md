@@ -1,8 +1,8 @@
 # Bouvet APP 
 
 Installasjons Guide
-1. * Git clone repo
-    * cd BouvetAPp
+1. * Git clone https://github.com/jonaslefdal/BouvetApp
+    * cd BouvetApp
 
 Start Backend Server
 
