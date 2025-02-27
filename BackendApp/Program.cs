@@ -1,30 +1,41 @@
+using Microsoft.EntityFrameworkCore;
+using BouvetApp.DataAccess;
+using BouvetApp.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-// Legg til CORS-tjenesten
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", builder =>
-    {
-        builder.WithOrigins("http://localhost:8081") // React-dev server URL
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-    });
+    options.AddPolicy("AllowFrontend",
+        builder => builder.WithOrigins(
+            "http://localhost:8889",            
+            "http://localhost:3000",
+            "http://localhost:3000"            
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials()); 
 });
 
-// Legg til controller-tjenester
-builder.Services.AddControllers();
+    builder.Services.AddControllers();
+    builder.Services.AddOpenApi();
+    builder.Services.AddSingleton<PushNotificationService>();
+
+    builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+    builder.Services.AddScoped<IApiRepository, EfApiRepository>();
+
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(5279);
+    });
+
 
 var app = builder.Build();
 
-// Bruk CORS-policyen
-app.UseCors("AllowReactApp");
-
 app.UseRouting();
+app.UseCors("AllowFrontend");
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();
