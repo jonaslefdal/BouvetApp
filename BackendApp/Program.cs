@@ -19,7 +19,6 @@ builder.Services.AddCors(options =>
 
     builder.Services.AddControllers();
     builder.Services.AddOpenApi();
-    builder.Services.AddSingleton<PushNotificationService>();
 
     builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
