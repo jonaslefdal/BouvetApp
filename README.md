@@ -1,19 +1,18 @@
 # Bouvet APP 
 
 Installasjons Guide
-1. * Fork repoet
-    * git clone din fork  
-    * cd BouvetApp
+1. * gh repo clone https://github.com/jonaslefdal/BouvetApp
+    * <b>git checkout</b> -b [my-branch] 
+    * Gjør jobb
+    * git commit -m "My message"
+    * git push (sett upstream hvis kommandoen feiler)
 
 Start Backend Server
 
 2. * cd BackendApp
-    * dotnet run
-    * cd ..
+    * docker compose up --build
 
-Start Frontend Server
+Stop Backend Server
 
-3. * cd frontendapp
-    * npm start
-    * Trykk "w" i terminal for web
-    * Trykk "i" i terminal for ios simulator 
+2. * cd BackendApp
+    * docker compose down
