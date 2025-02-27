@@ -14,5 +14,9 @@ Start Backend Server
 
 Stop Backend Server
 
-2. * cd BackendApp
+3. * cd BackendApp
     * docker compose down
+
+
+
+#### OBS frontendapp er bare for personlig testing
