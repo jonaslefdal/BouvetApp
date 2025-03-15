@@ -1,23 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change if you're using a different branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build Project
-        run: npm run build  # 🚀 This ensures the build folder exists
+      - name: Build & Export
+        run: |
+          npm run build
+          touch out/.nojekyll  # Prevents GitHub Pages CSS issues
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: out  # 🛑 For Next.js, use "out" if using static export, else "build"
+          folder: out  # Upload the exported Next.js files
