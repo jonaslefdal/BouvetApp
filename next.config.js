@@ -8,9 +8,11 @@ const withPWA = require('next-pwa')({
   
   module.exports = withPWA({
 	reactStrictMode: true,
-	output: "export", 
+	output: "export",
 	images: {
-	  unoptimized: true, 
+	  unoptimized: true, // Fixes Next.js image issues in static export
 	},
+	basePath: "/BouvetApp", 
+	assetPrefix: "/BouvetApp/", 
   });
   
