@@ -4,8 +4,13 @@ const withPWA = require('next-pwa')({
 	dest: 'public',
 	register: false,
 	skipWaiting: true,
-})
-
-module.exports = withPWA({
+  });
+  
+  module.exports = withPWA({
 	reactStrictMode: true,
-})
+	output: "export", 
+	images: {
+	  unoptimized: true, 
+	},
+  });
+  
