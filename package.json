@@ -1,4 +1,5 @@
 {
+	"homepage": "https://jonaslefdal.github.io/BouvetApp",
 	"name": "next-pwa-template",
 	"version": "0.0.0",
 	"license": "MIT",
@@ -6,7 +7,9 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"dependencies": {
 		"@azure/msal-browser": "^4.7.0",
@@ -24,6 +27,7 @@
 		"eslint": "^8.51.0",
 		"eslint-config-next": "^13.5.4",
 		"eslint-config-prettier": "^9.0.0",
+		"gh-pages": "^6.3.0",
 		"postcss": "^8.4.31",
 		"prettier": "^3.0.3",
 		"prettier-plugin-tailwindcss": "^0.5.5",
