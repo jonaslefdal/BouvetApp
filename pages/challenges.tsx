@@ -44,7 +44,7 @@ const Challenges: React.FC = () => {
 	const fetchUserChallenges = async () => {
 		if (!userData?.accessToken) return;
   
-	  const response = await fetch("http://localhost:5279/api/challenge/user", {
+	  const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/challenge/user", {
 		headers: {
             Authorization: `Bearer ${userData.accessToken}`,
           },
@@ -60,7 +60,7 @@ const Challenges: React.FC = () => {
 	if (!userData?.accessToken) return;
 
 	const testDate = testDates[testDateIndex];
-    const response = await fetch(`http://localhost:5279/api/challenge/current?testDate=${testDate}`, {
+    const response = await fetch(`https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/challenge/current?testDate=${testDate}`, {
 		headers: {
             Authorization: `Bearer ${userData.accessToken}`,
           },
@@ -80,7 +80,7 @@ const Challenges: React.FC = () => {
 	const handleCompleteChallenge = async (challenge: Challenge) => {
 		if (!userData?.accessToken) return;
 	  
-		const response = await fetch("http://localhost:5279/api/challenge/complete", {
+		const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/challenge/complete", {
 		  method: "POST",
 		  headers: {
 			"Content-Type": "application/json",

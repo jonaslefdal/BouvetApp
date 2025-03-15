@@ -27,7 +27,7 @@ const Profile: React.FC = () => {
     if (!userData?.accessToken) return;
     const fetchFullUser = async () => {
       try {
-        const response = await fetch("http://localhost:5279/api/Profile/getUser", {
+        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/Profile/getUser", {
           headers: {
             Authorization: `Bearer ${userData.accessToken}`,
           },
@@ -50,7 +50,7 @@ const Profile: React.FC = () => {
     if (!userData?.accessToken) return;
     const fetchCompanies = async () => {
       try {
-        const response = await fetch("http://localhost:5279/api/Profile/allComp", {
+        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/Profile/allComp", {
           headers: {
             Authorization: `Bearer ${userData.accessToken}`,
           },
@@ -71,7 +71,7 @@ const Profile: React.FC = () => {
     e.preventDefault();
     if (!userData?.accessToken || !userData?.email || selectedCompanyId === null) return;
     try {
-      const response = await fetch("http://localhost:5279/api/Profile/companySet", {
+      const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/Profile/companySet", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

@@ -60,7 +60,7 @@ const DrivingForm: React.FC = () => {
         console.log("Sending payload:", JSON.stringify(payload)); // Debugging log
 
         // Call the API endpoint
-        const response = await fetch("http://localhost:5279/api/TransportEntry/upsert", {
+        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/TransportEntry/upsert", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

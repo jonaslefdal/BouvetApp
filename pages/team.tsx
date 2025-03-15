@@ -37,7 +37,7 @@ const TeamComponent: React.FC = () => {
   const fetchTeams = async () => {
     if (!userData?.accessToken) return;
     try {
-      const response = await fetch("http://localhost:5279/api/team/company", {
+      const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/team/company", {
         headers: {
           Authorization: `Bearer ${userData.accessToken}`,
         },
@@ -68,7 +68,7 @@ const TeamComponent: React.FC = () => {
     };
 
 	try {
-		const response = await fetch("http://localhost:5279/api/Team/upsert", {
+		const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/Team/upsert", {
 		  method: "POST",
 		  headers: {
 			"Content-Type": "application/json",
@@ -94,7 +94,7 @@ const TeamComponent: React.FC = () => {
 	if (!userData?.accessToken) return;
 	
 	try {
-	  const response = await fetch("http://localhost:5279/api/Profile/getUser", {
+	  const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/Profile/getUser", {
 		headers: {
 		  Authorization: `Bearer ${userData.accessToken}`,
 		},
@@ -123,7 +123,7 @@ const TeamComponent: React.FC = () => {
   const joinTeam = async (teamId: number) => {
 	if (!userData?.accessToken) return;
 	try {
-	  const response = await fetch("http://localhost:5279/api/team/join", {
+	  const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/team/join", {
 		method: "PUT",
 		headers: {
 		  "Content-Type": "application/json",
@@ -153,7 +153,7 @@ const TeamComponent: React.FC = () => {
   const fetchMyTeam = async () => {
 	if (!userData?.accessToken) return;
 	try {
-	  const response = await fetch("http://localhost:5279/api/team/myteam", {
+	  const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/team/myteam", {
 		headers: {
 		  Authorization: `Bearer ${userData.accessToken}`,
 		},
@@ -201,7 +201,7 @@ const TeamComponent: React.FC = () => {
   const leaveTeam = async () => {
 	if (!userData?.accessToken) return;
 	try {
-	  const response = await fetch("http://localhost:5279/api/team/leave", {
+	  const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/team/leave", {
 		method: "PUT",
 		headers: {
 		  "Content-Type": "application/json",

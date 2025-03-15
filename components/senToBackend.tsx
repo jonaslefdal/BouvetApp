@@ -11,7 +11,7 @@ const SyncUserData: React.FC = () => {
       if (sessionStorage.getItem("userUpserted")) return;
       
       try {
-        const response = await fetch("http://localhost:5279/api/users/upsert", {
+        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/users/upsert", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
