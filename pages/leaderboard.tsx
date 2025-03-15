@@ -59,7 +59,7 @@ const Leaderboard: React.FC = () => {
 
     const fetchUsers = async () => {
       try {
-        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/api/users/all", {
+        const response = await fetch("https://bouvetapi-frbah7fhh5cjdpfy.swedencentral-01.azurewebsites.net/api/users/all", {
           headers: {
             Authorization: `Bearer ${userData.accessToken}`,
           },
