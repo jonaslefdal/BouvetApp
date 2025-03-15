@@ -19,7 +19,7 @@ const Index = () => (
         <CityForm />
       </div>
 
-	  <UnauthenticatedTemplate><h1><LoginButton /> Ikke logget inn</h1></UnauthenticatedTemplate>
+	  <UnauthenticatedTemplate><h1><LoginButton /> Ikke logget inn!</h1></UnauthenticatedTemplate>
 
 	  <AuthenticatedTemplate>
   <h1>Logged in</h1>
